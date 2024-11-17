@@ -1,0 +1,17 @@
+import "google/protobuf/timestamp.proto";
+
+service UserService {
+  rpc getUserById(GetUserByIdRequest) returns (GetUserByIdResponse);
+}
+
+message GetUserByIdRequest {
+  required string id = 1;
+}
+
+message GetUserByIdResponse {
+  required string id = 1;
+  required string name = 2;
+  optional int32 age = 3;
+  required google.protobuf.Timestamp created = 4;
+  required google.protobuf.Timestamp updated = 5;
+}
